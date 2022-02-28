@@ -1,0 +1,27 @@
+Install Jenkins:
+- sudo apt update
+- sudo apt install openjdk-8-jdk
+- wget -q- O -https://pkg.jenkins.io/debian/jenkins.io.key
+- sudo apt-key add -
+- sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable-binary/ > /etc/apt/sources.list.d/jenkins.list'
+- sudo apt update
+- sudo apt install jenkins
+- systemctl status jenkins
+- http://localhost:8080
+
+=================================
+
+Build Pipeline example
+(located here:  jenkins dashboard - manage jenkins - manage plugins - available - build pipeline)
+- create freestyle jobs (job1, job2, job3)
+#chain the 3 jobs togehter
+- job1 ->configure->post build->build other projects->job2
+- job2->configure->post build->build other projects->job3
+# Create a build pipeline view
+- Jenkins Dashboard -> add view -> enter a name -> build pipeline view
+- ok->configure->pipeline flow->select inital job->job1->ok
+# Run the build pipeline
+
+====================
+other pipeline types: multibranch pipeline
+other pipeline types:  scripted, in GroovyDSL
